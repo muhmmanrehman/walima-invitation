@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wedding Invitation - Mohammed Ateeq & Juweria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom right, #faf5ef, #efe6dc);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.page {
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease forwards;
+}
+
+.page.active {
+  display: flex;
+}
+
+h1, h2, h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #4a3a2a;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #8c6a3b;
+}
+
+p {
+  color: #5a4b3c;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #b28b67;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #a67c52;
+  transform: scale(1.05);
+}
+
+.divider {
+  width: 100px;
+  height: 2px;
+  background-color: #b28b67;
+  margin: 20px auto;
+}
+
+/* ------------------------------
+   ANIMATIONS
+------------------------------ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------
+   BACKGROUND PATTERN
+------------------------------ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* ------------------------------
+   SPRINKLES/FILLERS
+------------------------------ */
+.sprinkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #f5d6a0;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity: 0; }
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.footer {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #7a6855;
+}
+
+/* ------------------------------
+   GALLERY IMAGES (if needed later)
+------------------------------ */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 3px solid #b28b67;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: WELCOME -->
+  <div class="page active" id="page1">
+    <h1 class="fade-up">In the Name of Allah,<br>the Most Gracious, the Most Merciful</h1>
+    <div class="divider"></div>
+    
+    <h2 class="fade-up">Mrs. Qamar Unnisa Begum</h2>
+    <p class="fade-up">Solicit your gracious presence on the auspicious occasion of the</p>
+    <h2 class="fade-up">Valima Ceremony</h2>
+    <p class="fade-up">of her son</p>
+    <h1 class="fade-up">Mohammed Ateeq</h1>
+    <h2 class="fade-up">With</h2>
+    <h1 class="fade-up">Juweria Begum</h1>
+    <p class="fade-up">D/O. Mohammed Osman Sahab
+    </p>
+    <div class="divider"></div>
+    
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 2: INVITATION DETAILS -->
+  <div class="page" id="page2">
+    <h1 class="fade-up">Wedding Celebration</h1>
+    <div class="divider"></div>
+    <p class="fade-up">
+      Join us as we celebrate the union of <br>
+      <strong>Mohammed Ateeq</strong> & <strong>Juweria</strong><br><br>
+      on <b>Sunday, 19th October 2025</b><br>
+      <b>Time:</b> 9:00 PM onwards<br>
+      <b>Venue:</b> MNR Functional Hall, Diamond Hills, Near S.P. Nagar,Moula Ali, Hyderabad
+    </p>
+    <p class="fade-up">Your presence will make this occasion more joyful and blessed.</p>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 3: VENUE -->
+  <div class="page" id="page3">
+    <h1 class="fade-up">Venue Details</h1>
+    <div class="divider"></div>
+    <p class="fade-up">
+      <b>Grand Lotus Banquet Hall</b><br>
+      Tolichowki, Hyderabad<br><br>
+      <a href="https://maps.app.goo.gl/i6gipCqd7U7Der3T7" target="_blank" style="color:#a67c52; text-decoration:none;">
+        📍 View on Google Maps
+      </a>
+    </p>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 4: THANK YOU -->
+  <div class="page" id="page4">
+    <h1 class="fade-up">Thank You</h1>
+    <div class="divider"></div>
+    <p class="fade-up">
+      We are grateful for your love, blessings, and presence on this special day.<br>
+      May Allah bless you and your family abundantly.
+    </p>
+    <div class="footer fade-up">
+      With love and blessings,<br>
+      Near and Dear 💕
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="guli-mata.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 4;
+
+    function nextPage() {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      currentPage++;
+      if (currentPage > totalPages) currentPage = 1;
+      document.getElementById(`page${currentPage}`).classList.add('active');
+    }
+
+    // Autoplay fix for mobile browsers
+    window.addEventListener('click', function() {
+      const audio = document.getElementById('bgMusic');
+      audio.play().catch(() => {});
+    });
+
+    // Create 30 floating sparkles
+    for (let i = 0; i < 30; i++) {
+      let sprinkle = document.createElement('div');
+      sprinkle.classList.add('sprinkle');
+      sprinkle.style.left = Math.random() * 100 + 'vw';
+      sprinkle.style.top = Math.random() * 100 + 'vh';
+      sprinkle.style.width = sprinkle.style.height = (4 + Math.random() * 6) + 'px';
+      sprinkle.style.animationDuration = (3 + Math.random() * 5) + 's';
+      sprinkle.style.background = `hsl(${Math.random()*50 + 30}, 80%, 80%)`;
+      document.body.appendChild(sprinkle);
+    }
+  </script>
+</body>
+</html>
